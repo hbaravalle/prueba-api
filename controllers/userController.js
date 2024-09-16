@@ -15,7 +15,6 @@ async function findById(req, res) {}
 async function create(req, res) {
   try {
     const { firstName, lastName, email, password, age } = req.body;
-    const avatar = req.file.filename;
 
     const newUser = await User.create({
       firstName,
@@ -23,7 +22,6 @@ async function create(req, res) {
       email,
       password,
       age,
-      avatar,
     });
 
     return res.status(201).json("User created!");

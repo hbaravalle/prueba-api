@@ -10,7 +10,6 @@ async function userSeeder() {
     lastName: "Organa",
     email: "leia@starwars.com",
     password: process.env.SEEDER_USER_PASSWORD,
-    avatar: "1.png",
     age: 30,
   });
 
