@@ -10,6 +10,7 @@ import orderRoutes from "./routes/orderRoutes.js";
 
 const app = express();
 
+app.use(express.static("public"));
 app.use(express.json());
 
 connectDB();
