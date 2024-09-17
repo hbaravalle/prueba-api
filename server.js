@@ -10,7 +10,6 @@ import orderRoutes from "./routes/orderRoutes.js";
 
 const app = express();
 
-app.use(express.static("public"));
 app.use(express.json());
 
 connectDB();
@@ -18,6 +17,10 @@ connectDB();
 app.use(userRoutes);
 app.use(authRoutes);
 app.use(orderRoutes);
+
+app.get("*", function (req, res) {
+  return res.status(404).json("Not found");
+});
 
 app.listen(process.env.APP_PORT, () => {
   console.log(`[Server] Server running at ${process.env.APP_PORT} port`);
